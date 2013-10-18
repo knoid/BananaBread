@@ -2,7 +2,7 @@
 
 class MY_Controller extends CI_Controller {
 
-	public function load_view($view, $data)
+	public function load_view($view, $data = array())
 	{
 		$this->load->view('layout', array(
 			'tpl_view' => $view,

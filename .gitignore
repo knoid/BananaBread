@@ -9,3 +9,5 @@ application/cache/*
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
+/br.sublime-project
+/br.sublime-workspace

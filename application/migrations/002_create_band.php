@@ -20,11 +20,13 @@ class Migration_create_band extends CI_Migration {
 				'constraint' => 255
 			),
 			'description' => array(
-				'type' => 'TEXT'
+				'type' => 'TEXT',
+				'null' => TRUE
 			),
 			'city' => array(
 				'type' => 'VARCHAR',
-				'constraint' => 255
+				'constraint' => 255,
+				'null' => TRUE
 			),
 			'gid' => array(
 				'type' => 'VARCHAR',

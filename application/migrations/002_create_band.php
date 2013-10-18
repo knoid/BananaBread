@@ -26,9 +26,9 @@ class Migration_create_band extends CI_Migration {
 				'type' => 'VARCHAR',
 				'constraint' => 255
 			),
-			'youtube' => array(
+			'gid' => array(
 				'type' => 'VARCHAR',
-				'constraint' => 255,
+				'constraint' => 30,
 				'null' => TRUE
 			)
 		));

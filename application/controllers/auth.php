@@ -11,7 +11,6 @@ class Auth extends MY_Controller {
 		$config = $this->config->item($provider);
 		if ($config)
 		{
-			$this->load->library('session');
 			$this->load->library('OAuth2');
 			$provider = $this->oauth2->provider($provider, $config);
 

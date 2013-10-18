@@ -12,5 +12,5 @@ class Events extends CI_Controller {
 	}
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* End of file events.php */
+/* Location: ./application/controllers/events.php */

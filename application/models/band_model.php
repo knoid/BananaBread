@@ -26,19 +26,6 @@ class Band_model extends CI_Model {
 		return $band;
 	}
 
-	public function add($user_info)
-	{
-		if (is_object($user_info))
-		{
-			$this->db->insert('band', array(
-				'gid'         => $user_info->uid,
-				'name'        => $user_info->name,
-				'city'        => $user_info->location,
-				'description' => $user_info->description
-			));
-		}
-	}
-
 }
 
 /* End of file band_model.php */

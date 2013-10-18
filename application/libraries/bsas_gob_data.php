@@ -69,11 +69,10 @@ class bsas_gob_data {
 
 	public function get($name, array $arguments = array())
 	{
-		$url = $this->_base_url . ucfirst($name) . '&' . http_build_query($arguments);
+		$url = $this->_base_url . ucfirst($name) . 'ListFiltered&' . http_build_query($arguments);
 
-		$ch = curl_init();
+		$ch = curl_init($url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-		curl_setopt($ch, CURLOPT_URL, $url);
 		$xml = curl_exec($ch);
 		return simplexml_load_string($xml);
 	}

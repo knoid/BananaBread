@@ -11,6 +11,11 @@ class Migration_create_band extends CI_Migration {
 				'unsigned'       => TRUE,
 				'auto_increment' => TRUE
 			),
+			'media_id' => array(
+				'type'       => 'INT',
+				'constraint' => 11,
+				'unsigned'   => TRUE
+			),
 			'name' => array(
 				'type'       => 'VARCHAR',
 				'constraint' => 255

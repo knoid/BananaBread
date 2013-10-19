@@ -10,7 +10,8 @@
  */
 
 class OAuth2_Provider_Soundcloud extends OAuth2_Provider
-{	
+{
+
 	/**
 	 * @var  string  the method to use when requesting tokens
 	 */
@@ -28,24 +29,10 @@ class OAuth2_Provider_Soundcloud extends OAuth2_Provider
 
 	public function get_user_info(OAuth2_Token_Access $token)
 	{
-		$url = 'https://api.soundcloud.com/me.json?'.http_build_query(array(
+		$url = 'https://api.soundcloud.com/me/tracks.json?'.http_build_query(array(
 			'oauth_token' => $token->access_token,
 		));
 
-		$user = json_decode(file_get_contents($url));
-
-		// Create a response from the request
-		return array(
-			'uid' => $user->id,
-			'nickname' => $user->username,
-			'name' => $user->full_name,
-			'location' => $user->country.' ,'.$user->country,
-			'description' => $user->description,
-			'image' => $user->avatar_url,
-			'urls' => array(
-				'MySpace' => $user->myspace_name,
-				'Website' => $user->website,
-			),
-		);
+		return json_decode(file_get_contents($url));
 	}
 }

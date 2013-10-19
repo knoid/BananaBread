@@ -20,9 +20,17 @@
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><a data-toggle="modal" data-target="#signup-modal" href="javascript:;">Sign in</a></li>
+          <?php if (!$is_logged) {  ?>
+            <li><a data-toggle="modal" data-target="#signup-modal" href="javascript:;">Sign in</a></li>
+          <?php } else { ?>
+            <li><a data-toggle="modal" href="<?php echo site_url('auth/logout'); ?>">Sign out</a></li>
+          <?php } ?>
         </ul>
-        <h3 class="muted"><img src="<?php echo base_url('assets/images/logo.png') ?>" alt=""></h3>
+        <h3 class="muted">
+          <a href="<?php echo site_url('events') ?>">
+            <img src="<?php echo base_url('assets/images/logo.png') ?>" alt="">
+          </a>
+        </h3>
       </div>
 
       <div class="content">

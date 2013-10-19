@@ -53,6 +53,13 @@
       <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/68322084"></iframe>
     </div>
   </div>
+  <?php if ($is_logged): ?>
+    <form action="<?php echo site_url('band/upload/youtube') ?>" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" id="youtube_upload">
+      <input type="submit">
+    </form>
+  <?php endif ?>
+
 
 
   <script>

@@ -34,4 +34,9 @@ class Auth_model extends CI_Model {
 		}
 	}
 
+	public function is_logged()
+	{
+		return !!$this->session->userdata('band');
+	}
+
 }

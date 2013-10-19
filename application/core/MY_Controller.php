@@ -6,7 +6,8 @@ class MY_Controller extends CI_Controller {
 	{
 		$this->load->view('layout', array(
 			'tpl_view' => $view,
-			'tpl_data' => $data
+			'tpl_data' => $data,
+			'is_logged' => $this->auth_model->is_logged()
 		));
 	}
 

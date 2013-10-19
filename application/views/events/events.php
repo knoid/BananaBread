@@ -24,7 +24,7 @@
             <img src="<?php echo base_url('assets/images/banda1.png') ?>" alt="" class="pull-left">
             <div class="band-data">
               <p class="band-title">
-                <a href="<?php echo site_url('events/show/'.$event->band_id) ?>"><?php echo $event->name; ?></a>
+                <a href="<?php echo site_url('band/'.$event->band_id) ?>"><?php echo $event->name; ?></a>
               </p>
               <p>En: ducimus qui blanditiis cupiditate non provident voluptatum deleniti.<br/>Viernes 18 de Octubre</p>
               <p>play youutbe o algo</p>

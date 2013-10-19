@@ -2,15 +2,15 @@
 
 class Band extends MY_Controller {
 
-	public function show($band_id)
+	public function show($id)
 	{
 		$this->load->model('band_model');
-		$this->load_view('band', array(
-			'band' => $this->band_model->get_by_id($band_id, TRUE),
-			'edit' => count($this->session->userdata('band')) > 0
+
+		$this->load_view('events/show', array(
+			'band' => $this->band_model->get_by_id($id),
 		));
 	}
-
+	
 	public function upload($to_service)
 	{
 		if ($to_service == 'youtube')

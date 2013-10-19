@@ -11,15 +11,6 @@ class Events extends MY_Controller {
 		));
 	}
 
-	public function show($id)
-	{
-		$this->load->model('band_model');
-
-		$this->load_view('events/show', array(
-			'band' => $this->band_model->get_by_id($id)
-		));
-	}
-
 }
 
 /* End of file welcome.php */

@@ -2,9 +2,6 @@
 
 class Auth extends MY_Controller {
 
-	/**
-	 * This is here just because it's the default route.
-	 */
 	public function login($provider)
 	{
 		$this->load->model('auth_model');
@@ -15,8 +12,15 @@ class Auth extends MY_Controller {
 			$band = $this->band_model->update_by_gid($user);
 			$this->band_model->fetch_youtube_videos($band, $token);
 			$this->session->set_userdata('band', $band);
-			redirect('band/' . $band->band_id);
+			redirect('events/show/' . $band->band_id);
 		}
+	}
+
+	public function logout()
+	{
+		$this->session->set_userdata('band', FALSE);
+		$this->session->set_userdata('user', FALSE);
+		redirect('events');
 	}
 
 }

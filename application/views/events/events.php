@@ -19,18 +19,21 @@
     <p class="title">Bandas cerca tuyo</p class="title">
     <ul class="unstyled">
     <?php foreach($events->result() as $event) { ?>
-        <li>
-          <div class="band-display">
-            <img src="<?php echo base_url('assets/images/banda1.png') ?>" alt="" class="pull-left">
-            <div class="band-data">
-              <p class="band-title">
-                <a href="<?php echo site_url('band/'.$event->band_id) ?>"><?php echo $event->name; ?></a>
-              </p>
-              <p>En: ducimus qui blanditiis cupiditate non provident voluptatum deleniti.<br/>Viernes 18 de Octubre</p>
-              <p>play youutbe o algo</p>
+        <script type="template/band" id="template-band">
+          <li>
+            <div class="band-display">
+              <img src="<?php echo base_url('assets/images/banda1.png') ?>" alt="" class="pull-left">
+              <div class="band-data">
+                <p class="band-title">
+                  <a href="<?php echo site_url('band/'.$event->band_id) ?>"><?php echo $event->name; ?></a>
+                </p>
+                <p>En: ducimus qui blanditiis cupiditate non provident voluptatum deleniti.<br/>Viernes 18 de Octubre</p>
+                <p>play youutbe o algo</p>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
+        </script>
+        <li>Cargando...</li>
     <?php } ?>
     </ul>
   </div>

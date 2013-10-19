@@ -36,7 +36,8 @@ class Auth_model extends CI_Model {
 
 	public function is_logged()
 	{
-		return !!$this->session->userdata('band');
+		//var_dump($this->session->userdata('user'));die();
+		return !!$this->session->userdata('band') || !!$this->session->userdata('user') ;
 	}
 
 }

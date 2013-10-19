@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Auth extends MY_Controller {
 
@@ -7,36 +7,15 @@ class Auth extends MY_Controller {
 	 */
 	public function login($provider)
 	{
-		$this->config->load('oauth2');
-		$config = $this->config->item($provider);
-		if ($config)
+		$this->load->model('auth_model');
+		list($token, $user) = $this->auth_model->login($provider);
+		if ($user)
 		{
-			$this->load->library('OAuth2');
-			$provider = $this->oauth2->provider($provider, $config);
-
-			if ( ! $this->input->get('code'))
-			{
-				// By sending no options it'll come back here
-				$provider->authorize();
-			}
-			else
-			{
-				// Howzit?
-				try
-				{
-					$token = $provider->access($_GET['code']);
-					$user = $provider->get_user_info($token);
-
-					$this->load->model('band_model');
-					$band = $this->band_model->update_by_gid($user);
-					$this->session->set_userdata('band', $band);
-					redirect('band/' . $band->band_id);
-				}
-				catch (OAuth2_Exception $e)
-				{
-					show_error('That didnt work: '.$e);
-				}
-			}
+			$this->load->model('band_model');
+			$band = $this->band_model->update_by_gid($user);
+			$this->band_model->fetch_youtube_videos($band, $token);
+			$this->session->set_userdata('band', $band);
+			redirect('band/' . $band->band_id);
 		}
 	}
 

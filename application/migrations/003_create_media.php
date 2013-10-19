@@ -18,7 +18,8 @@ class Migration_create_media extends CI_Migration {
 			),
 			'name' => array(
 				'type'       => 'VARCHAR',
-				'constraint' => 255
+				'constraint' => 255,
+				'null'       => TRUE
 			),
 			'type' => array(
 				'type'       => 'VARCHAR',

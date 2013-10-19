@@ -58,4 +58,13 @@ abstract class OAuth2_Token {
 		return isset($this->$key);
 	}
 
+	public function to_google_token()
+	{
+		return json_encode(array(
+			'expires_in'   => $this->expires - time(),
+			'created'      => time(),
+			'access_token' => $this->access_token
+		));
+	}
+
 } // End Token

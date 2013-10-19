@@ -63,44 +63,10 @@ class Band_model extends CI_Model {
 	{
 		$this->load->library('Google/Google_Client');
 		$client = new Google_Client();
-
-		$client->setAccessToken(json_encode(array(
-			'expires_in'   => $token->expires - time(),
-			'created'      => time(),
-			'access_token' => $token->access_token
-		)));
+		$client->setAccessToken($token->to_google_token());
 
 		$this->load->library('Google/contrib/Google_YouTubeService', $client);
 		return new Google_YouTubeService($client);
-	}
-
-	function add_youtube_upload($band, $token, $file)
-	{
-		list($temp_dir, $mime) = $file;
-		$youtube = $this->youtube_service($token);
-
-		$snippet = new Google_VideoSnippet();
-		$snippet->setTitle("Video uploaded on " . date('Y-m-d H:i'));
-		$snippet->setDescription("Test descrition");
-		$snippet->setTags(array("tag1","tag2"));
-		$snippet->setCategoryId("22");
-
-		$status = new Google_VideoStatus();
-		$status->privacyStatus = "private";
-
-		$video = new Google_Video();
-		$video->setSnippet($snippet);
-		$video->setStatus($status);
-
-		$video_data = $youtube->videos->insert("status,snippet", $video, array(
-			'data'     => file_get_contents($temp_dir),
-			'mimeType' => $mime
-		));
-
-		$this->load->model('media_model');
-		$this->media_model->add($band->band_id, 'youtube', $video_data['id']);
-
-		unlink($temp_dir);
 	}
 
 	function fetch_youtube_videos($band, $token)

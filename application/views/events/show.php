@@ -25,7 +25,7 @@
     </div>
 
     <button type="buttton" class="btn btn-big disabled">Venta de entradas</button>
-    
+
   </div>
 
   <div class="medias" >
@@ -54,7 +54,7 @@
     </div>
   </div>
   <?php if ($is_logged): ?>
-    <form action="<?php echo site_url('band/upload/youtube') ?>" method="post" enctype="multipart/form-data">
+    <form action="<?php echo site_url('band/upload/google') ?>" method="post" enctype="multipart/form-data">
       <input type="file" name="file" id="youtube_upload">
       <input type="submit">
     </form>

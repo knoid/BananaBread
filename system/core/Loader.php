@@ -208,7 +208,7 @@ class CI_Loader {
 			return FALSE;
 		}
 
-		if ( ! is_null($params) && ! is_array($params))
+		if ( ! is_null($params) && ! is_array($params) && ! is_object($params))
 		{
 			$params = NULL;
 		}

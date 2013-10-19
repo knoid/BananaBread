@@ -28,6 +28,10 @@ class Migration_create_band extends CI_Migration {
 				'type' => 'TEXT',
 				'null' => TRUE
 			),
+			'tags' => array(
+				'type' => 'TEXT',
+				'null' => TRUE
+			),
 			'city' => array(
 				'type' => 'VARCHAR',
 				'constraint' => 255,

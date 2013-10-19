@@ -33,7 +33,7 @@ class Search extends MY_Controller {
 
 		$searchResponse = $youtube->search->listSearch('id,snippet', array(
 			'q' => $query_terms,
-			'maxResults' => 10,
+			'maxResults' => 6,
 			'type' => 'video'
 		));
 

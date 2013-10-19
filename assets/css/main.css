@@ -19,7 +19,7 @@ a {
 }
 
 .main-band {
-  background: url('imgs/main-band.png') #000 top right no-repeat;
+  background: #000 top right no-repeat;
   height: 1000px;
   position: relative;
   padding: 0;

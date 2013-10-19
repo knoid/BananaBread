@@ -10,7 +10,24 @@ class Band extends MY_Controller {
 			'band' => $this->band_model->get_by_id($id),
 		));
 	}
-	
+
+	public function fetch_from_soundcloud()
+	{
+		$band = $this->session->userdata('band');
+		if ($band)
+		{
+			list($token, $tracks) = $this->auth_model->login('soundcloud');
+			$this->load->model('media_model');
+			foreach ($tracks as $track)
+			{
+				$this->media_model->add($band->band_id, 'soundcloud', $track->id, $track->title);
+			}
+			redirect('band/' . $band->band_id);
+		}
+
+		show_404();
+	}
+
 	public function upload($to_service)
 	{
 		if ($to_service == 'youtube')

@@ -43,21 +43,15 @@ class Band_model extends CI_Model {
 			$band = $this->get_by_gid($guser['uid']);
 		}
 
-		$image = $this->db
-			->where('band_id', $band->band_id)
-			->where('link', $guser['image'])
-			->get('media')->row();
-		if ( ! $image)
+		$this->load->model('media_model');
+		$image = $this->media_model->add($band->band_id, 'image', $guser['image']);
+
+		if (isset($image->added))
 		{
-			$this->db->insert('media', array(
-				'band_id' => $band->band_id,
-				'type'    => 'image',
-				'link'    => $guser['image']
-			));
 			$this->db
 				->where('band_id', $band->band_id)
 				->update('band', array(
-					'media_id' => $this->db->insert_id()
+					'media_id' => $image->media_id
 				));
 			$band = $this->get_by_gid($guser['uid']);
 		}
@@ -103,11 +97,10 @@ class Band_model extends CI_Model {
 			'mimeType' => $mime
 		));
 
-		$this->db->insert('media', array(
-			'band_id' => $band->band_id,
-			'type' => 'youtube',
-			'link' => $video_data['id']
-		));
+		$this->load->model('media_model');
+		$this->media_model->add($band->band_id, 'youtube', $video_data['id']);
+
+		unlink($temp_dir);
 	}
 
 	function fetch_youtube_videos($band, $token)
@@ -140,12 +133,7 @@ class Band_model extends CI_Model {
 			{
 				if ($videoItem['status']['uploadStatus'] == 'processed')
 				{
-					$this->db->insert('media', array(
-						'band_id' => $band->band_id,
-						'name' => $videoItem['snippet']['title'],
-						'type' => 'youtube',
-						'link' => $videoItem['id']
-					));
+					$this->media_model->add($band->band_id, 'youtube', $videoItem['id'], $videoItem['snippet']['title']);
 				}
 			}
 		}

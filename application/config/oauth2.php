@@ -10,6 +10,10 @@ $config = array(
 			'https://www.googleapis.com/auth/youtube.readonly',
 			'https://www.googleapis.com/auth/youtube.upload'
 		)
+	),
+	'soundcloud' => array(
+		'id'     => '320b190c1640e1ef31ec4a412acb08a9',
+		'secret' => 'pepepepepe'
 	)
 );
 

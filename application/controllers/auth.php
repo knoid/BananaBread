@@ -4,7 +4,6 @@ class Auth extends MY_Controller {
 
 	public function login($provider)
 	{
-		$this->load->model('auth_model');
 		list($token, $user) = $this->auth_model->login($provider);
 		if ($user)
 		{
@@ -12,7 +11,7 @@ class Auth extends MY_Controller {
 			$band = $this->band_model->update_by_gid($user);
 			$this->band_model->fetch_youtube_videos($band, $token);
 			$this->session->set_userdata('band', $band);
-			redirect('events/show/' . $band->band_id);
+			redirect('band/' . $band->band_id);
 		}
 	}
 

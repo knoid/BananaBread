@@ -15,7 +15,7 @@ class Scrapper extends CI_Controller {
 
 	protected function get_band($youtube)
 	{
-		return $this->db->where('youtube', (string) $youtube)
+		return $this->db->where('gid', (string) $youtube)
 						->get('band')->row();
 	}
 
@@ -46,7 +46,7 @@ class Scrapper extends CI_Controller {
 						'type'        => 'Musica',
 						'description' => (string) $event->Resumen,
 						'city'        => 'Buenos Aires, Argentina',
-						'youtube'     => (string) $event->Youtube
+						'gid'     => (string) $event->Youtube
 					));
 					$band_id = $this->db->insert_id();
 				}

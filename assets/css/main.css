@@ -60,7 +60,7 @@ a {
   padding: 2px;
 }
 .main-band .band-tags a {
-  color: #FFF;
+  color: #FFF!important;
   text-decoration: underline;
   font-style: italic;
 }

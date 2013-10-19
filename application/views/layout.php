@@ -45,7 +45,9 @@
         <div class="modal-body">
             <div class="row-fluid login-popup">
               <div class="span6">
-                <img src="<?php echo base_url('assets/images/login-usuarios.png') ?>" alt=""> 
+                <a href="<?php echo site_url('/auth/loginUser/google'); ?>">
+                  <img src="<?php echo base_url('assets/images/login-usuarios.png') ?>" alt="" style="cursor:pointer;" class="login-user">
+                </a>
               </div>
 
               <div class="span6">
@@ -64,6 +66,5 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
-
   </body>
 </html>

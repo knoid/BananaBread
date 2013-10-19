@@ -68,7 +68,7 @@ abstract class OAuth2_Provider
 		}
 
 		$this->client_id = $options['id'];
-		
+
 		isset($options['callback']) and $this->callback = $options['callback'];
 		isset($options['secret']) and $this->client_secret = $options['secret'];
 		isset($options['scope']) and $this->scope = $options['scope'];
@@ -116,7 +116,7 @@ abstract class OAuth2_Provider
 
 	/*
 	* Get an authorization code from Facebook.  Redirects to Facebook, which this redirects back to the app using the redirect address you've set.
-	*/	
+	*/
 	public function authorize($options = array())
 	{
 		$state = md5(uniqid(rand(), true));
@@ -128,11 +128,11 @@ abstract class OAuth2_Provider
 			'state' 			=> $state,
 			'scope'				=> is_array($this->scope) ? implode($this->scope_seperator, $this->scope) : $this->scope,
 			'response_type' 	=> 'code',
-			'approval_prompt'   => 'force' // - google force-recheck
+			// 'approval_prompt'   => 'force' // - google force-recheck
 		);
-		
+
 		$params = array_merge($params, $this->params);
-		
+
 		redirect($this->url_authorize().'?'.http_build_query($params));
 	}
 
@@ -141,7 +141,7 @@ abstract class OAuth2_Provider
 	*
 	* @param	string	The access code
 	* @return	object	Success or failure along with the response details
-	*/	
+	*/
 	public function access($code, $options = array())
 	{
 		$params = array(
@@ -149,7 +149,7 @@ abstract class OAuth2_Provider
 			'client_secret' => $this->client_secret,
 			'grant_type' 	=> isset($options['grant_type']) ? $options['grant_type'] : 'authorization_code',
 		);
-		
+
 		$params = array_merge($params, $this->params);
 
 		switch ($params['grant_type'])
@@ -216,7 +216,7 @@ abstract class OAuth2_Provider
 		{
 			throw new OAuth2_Exception($return);
 		}
-		
+
 		switch ($params['grant_type'])
 		{
 			case 'authorization_code':
@@ -227,7 +227,7 @@ abstract class OAuth2_Provider
 				return OAuth2_Token::factory('refresh', $return);
 			break;
 		}
-		
+
 	}
 
 }

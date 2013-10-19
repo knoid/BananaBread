@@ -7,7 +7,7 @@ class Event_model extends CI_Model {
 	 * @TODO define order by
 	 * @robado https://developers.google.com/maps/articles/phpsqlsearch_v3?csw=1
 	 */
-	public function find_near($lat, $lng, $distance = 50, $band_type = FALSE, $limit = 20, $offset = 0)
+	public function find_near($lat, $lng, $distance = 50, $band_type = FALSE, $limit = 5, $offset = 0)
 	{
 		$lat = (double) $lat;
 		$lng = (double) $lng;

@@ -24,7 +24,14 @@
       </div>
     </div>
 
-    <button type="buttton" class="btn btn-big disabled">Venta de entradas</button>
+    <a 
+      href="https://www.mercadopago.com/mla/checkout/pay?pref_id=99325445-f24415ee-138b-4c46-873b-1a230e9084b1"
+      name="MP-payButton"
+      class="orange-ar-m-rn">Venta de entradas</a>
+    <script type="text/javascript">
+    (function(){function $MPBR_load(){window.$MPBR_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = ("https:"==document.location.protocol?"https://www.mercadopago.com/org-img/jsapi/mptools/buttons/":"http://mp-tools.mlstatic.com/buttons/")+"render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPBR_loaded = true;})();}window.$MPBR_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPBR_load) : window.addEventListener('load', $MPBR_load, false)) : null;})();
+    </script>
+
 
   </div>
 

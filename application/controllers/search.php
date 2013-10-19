@@ -7,10 +7,12 @@ class Search extends MY_Controller {
 		$queries = array_filter(explode(' ', $this->input->get('query')));
 		$query_terms = implode(' ', $queries);
 
-		foreach ($queries as $term)
-			foreach (array('description', 'name') as $field)
-				$this->db->where("LOWER($field) LIKE", "%$term%");
-
+		$r = array();
+		foreach ($queries as $term) {
+			foreach (array('description', 'name') as $field) {
+				$this->db->or_where("LOWER($field) LIKE", "%$term%");
+			}
+		}
 		$res = $this->db->get('band');
 
 		$this->config->load('oauth2');

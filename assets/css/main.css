@@ -174,3 +174,13 @@ a {
   margin-bottom: 5px;
   border-bottom: 5px solid #e87c05;
 }
+
+.band-search-item {
+  width: 90%;
+  padding-bottom: 20px;
+  margin: 30px auto;
+  border-bottom: 1px solid #999;
+}
+.band-search-item img {
+  margin-right: 10px;
+}

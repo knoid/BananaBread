@@ -12,7 +12,7 @@ class Band extends MY_Controller {
 			show_404();
 
 		$this->load_view('events/show', array(
-			'band' => $this->band_model->get_by_id($id),
+			'band' => $this->band_model->get_by_id($id, true),
 		));
 	}
 

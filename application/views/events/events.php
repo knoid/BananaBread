@@ -17,40 +17,30 @@
 <div class="row-fluid real-data">
   <div class="span6 band-list">
     <p class="title">Bandas cerca tuyo</p class="title">
-    <ul class="unstyled">
-    <?php foreach($events->result() as $event) { ?>
-        <script type="template/band" id="template-band">
-          <li>
-            <div class="band-display">
-              <img src="<?php echo base_url('assets/images/banda1.png') ?>" alt="" class="pull-left">
-              <div class="band-data">
-                <p class="band-title">
-                  <a href="<?php echo site_url('band/'.$event->band_id) ?>"><?php echo $event->name; ?></a>
-                </p>
-                <p>En: ducimus qui blanditiis cupiditate non provident voluptatum deleniti.<br/>Viernes 18 de Octubre</p>
-                <p>play youutbe o algo</p>
-              </div>
+    <ul class="left-bands unstyled">
+      <li class="loading">Cargando...</li>
+      <script type="template/band" id="template-band">
+        <li>
+          <div class="band-display">
+            <img src="%%IMG%%" alt="" class="pull-left">
+            <div class="band-data">
+              <p class="band-title">
+                <a href="%%URL%%">%%NAME%%</a>
+              </p>
+              <p>%%DESC%%<br/>%%DAY%%</p>
             </div>
-          </li>
-        </script>
-        <li>Cargando...</li>
-    <?php } ?>
+          </div>
+        </li>
+      </script>
     </ul>
   </div>
 
   <div class="span6 band-list">
     <p class="title">Te recomendamos</p class="title">
-    <ul class="unstyled">
-      <li>
-        <div class="band-display">
-          <img src="<?php echo base_url('assets/images/banda1.png') ?>" alt="" class="pull-left">
-          <div class="band-data">
-            <p class="band-title">Titulo de banda</p>
-            <p>En: ducimus qui blanditiis cupiditate non provident voluptatum deleniti.<br/>Viernes 18 de Octubre</p>
-            <p>play youutbe o algo</p>
-          </div>
-        </div>
-      </li>
+    <ul class="right-bands unstyled">
+      <li class="loading-left">Cargando...</li>
     </ul>
   </div>
 </div>
+<input type="hidden" name="tags" value="<?php echo implode(",",$tags); ?>" id="tags">
+<div id="map" style="width:1px;height:1px;"></div>

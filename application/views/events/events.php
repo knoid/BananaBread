@@ -38,7 +38,7 @@
   <div class="span6 band-list">
     <p class="title">Te recomendamos</p class="title">
     <ul class="right-bands unstyled">
-      <li class="loading-left">Cargando...</li>
+      <li class="loading">Cargando...</li>
     </ul>
   </div>
 </div>

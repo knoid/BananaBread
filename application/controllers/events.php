@@ -31,7 +31,7 @@ class Events extends MY_Controller {
 		$ret = array();
 		foreach ($events->result() as $event) {
 			$ret[] = array(
-				'img'=>base_url('assets/images/banda1.png'),
+				'img'=>base_url('assets/images/banda/bandaINDEX.jpg'),
 				'url'=>site_url('band/'.$event->band_id),
 				'name'=>$event->name,
 				'desc'=>substr($event->description, 0, 100),

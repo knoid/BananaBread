@@ -4,7 +4,7 @@
       <img src="<?php echo base_url('assets/images/banda1-gr.png'); ?>" alt="">
     </div>
       <p class="title"><?php echo $band->name; ?></p>
-      <?php echo $band->description; ?>
+      <p style="font-size:18px;"><?php echo $band->description; ?></p>
   </div>
 
   <div class="next-shows">
@@ -45,6 +45,12 @@
       <div class="span3"><iframe width="100%" height="215" src="//www.youtube.com/embed/7GCLZfTD_xA" frameborder="0" allowfullscreen></iframe></div>
       <div class="span3"><iframe width="100%" height="215" src="//www.youtube.com/embed/F7hVAH3f2g0" frameborder="0" allowfullscreen></iframe></div>
       <div class="span3"><iframe width="100%" height="215" src="//www.youtube.com/embed/Rh0G2dd3tCA" frameborder="0" allowfullscreen></iframe></div>
+      <?php if ($is_logged): ?>
+        <form action="<?php echo site_url('band/upload/google') ?>" method="post" enctype="multipart/form-data">
+          <input type="file" name="file">
+          <input type="submit">
+        </form>
+      <?php endif ?>
     </div>
   </div>
 
@@ -58,15 +64,14 @@
       <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/68323400"></iframe>
       <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/68322738"></iframe>
       <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/68322084"></iframe>
+      <?php if ($is_logged): ?>
+        <form action="<?php echo site_url('band/upload/soundcloud2') ?>" method="post" enctype="multipart/form-data">
+          <input type="file" name="file">
+          <input type="submit">
+        </form>
+      <?php endif ?>
     </div>
   </div>
-  <?php if ($is_logged): ?>
-    <form action="<?php echo site_url('band/upload/google') ?>" method="post" enctype="multipart/form-data">
-      <input type="file" name="file" id="youtube_upload">
-      <input type="submit">
-    </form>
-  <?php endif ?>
-
 
 
   <script>

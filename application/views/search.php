@@ -40,3 +40,7 @@
 <?php foreach($tiny_items as $item) { ?>
 	<object width="250" height="40" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"><param name="movie" value="http://grooveshark.com/songWidget.swf" /><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=grooveshark.com&songID=<?php echo $item->SongID ?>&style=metal&p=0" /><object type="application/x-shockwave-flash" data="http://grooveshark.com/songWidget.swf" width="250" height="40"><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=grooveshark.com&songID=<?php echo $item->SongID ?>&style=metal&p=0" /><span><a href="<?php echo $item->Url; ?>" ><?php echo $item->SongName ?></a></span></object></object>
 <?php } ?>
+
+<?php foreach($youtube_items as $item) { ?>
+
+<?php } ?>

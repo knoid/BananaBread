@@ -23,9 +23,24 @@ class Search extends MY_Controller {
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		$data = json_decode(curl_exec($ch));
 
+		$this->load->library('Google/Google_Client');
+		$client = new Google_Client();
+		$config = $this->config->item('google');
+		$client->setDeveloperKey($config['server_api_key']);
+
+		$this->load->library('Google/contrib/Google_YouTubeService', $client);
+		$youtube = new Google_YouTubeService($client);
+
+		$searchResponse = $youtube->search->listSearch('id,snippet', array(
+			'q' => $query_terms,
+			'maxResults' => 10,
+			'type' => 'video'
+		));
+
 		$this->load_view('search', array(
 			'our_items' => $res->result(),
 			'tiny_items' => $data,
+			'youtube_items' => $searchResponse['items'],
 			'query_terms'  => $query_terms
 		));
 	}

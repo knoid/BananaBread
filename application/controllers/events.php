@@ -46,9 +46,9 @@ class Events extends MY_Controller {
 		$events = array();
 		$events = $this->event_model->find_any();
 		$ret = array();
-		foreach ($events->result() as $event) {
+		foreach ($events->result() as $i=>$event) {
 			$ret[] = array(
-				'img'=>base_url('assets/images/banda1.png'),
+				'img'=>base_url('assets/images/banda/banda'.($i%10+1).'.jpg'),
 				'url'=>site_url('band/'.$event->band_id),
 				'name'=>$event->name,
 				'desc'=>substr($event->description, 0, 100),

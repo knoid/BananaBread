@@ -8,17 +8,18 @@
 <h2>Resultados relacionados con "<?php echo $query_terms; ?>"</h2>
 
 <?php if(count($our_items) > 0) { ?>
-	<?php foreach($our_items as $item) { ?>
+	<?php foreach($our_items as $i=>$item) { ?>
 		<div class="row-fluid band-search-item">
 			<div class="span8 clearfix">
 				<div class="pull-left">
-					<img src="<?php echo base_url('assets/images/banda1.png') ?>" alt="">
+					<img src="<?php echo base_url('assets/images/banda/banda'.($i%10+1).'.jpg') ?>" alt="">
 				</div>
 				<div>
 					<a href="<?php echo site_url('band/'.$item->band_id) ?>"><?php echo $item->name; ?></a>
 					<p><?php echo $item->description; ?></p>
 				</div>
 			</div>
+			<?php if($i==1) {  ?>
 			<div class="span4">
 				<?php //VER PONERLO BIEN ?>
 				<h3>Pr&oacute;ximos Shows</h3>
@@ -30,6 +31,7 @@
 				  </div>
 				</div>
 			</div>
+			<?php } ?>
 		</div>
 	<?php } ?>
 <?php } ?>

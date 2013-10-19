@@ -25,10 +25,6 @@ a {
   padding: 0;
 }
 
-.main-band.seccond {
-  background: url('imgs/main-band2.png') #000 top right no-repeat;
-}
-
 .main-band .band-data {
   position: absolute;
   left: 10px;

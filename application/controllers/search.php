@@ -16,7 +16,7 @@ class Search extends MY_Controller {
 		$res = $this->db->get('band');
 
 		$this->config->load('oauth2');
-		$ch = curl_init("http://tinysong.com/s/$query_terms?" . http_build_query(array(
+		$ch = curl_init("http://tinysong.com/s/" . urlencode($query_terms) . "?" . http_build_query(array(
 			'format' => 'json',
 			'key'    => $this->config->item('tinysong')
 		)));

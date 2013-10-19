@@ -1,4 +1,5 @@
 <div class="main-band">
+  <img src="<?php echo base_url('assets/images/main-band.png'); ?>" alt=""> 
   <div class="band-data">
       <span class="title-big">Getting Better</span><br>
       <span class="sub-title">Viernes 18</span><br>
@@ -10,8 +11,11 @@
   </div>
 </div>
 
+
 <div class="search-input">
-  <input type="text" name="query" value="" placeholder="Busca musica, artistas, generos, zona" class="span7">
+  <form method="get" action="search">
+    <input type="text" name="query" value="" placeholder="Busca musica, artistas, generos, zona" class="span7">
+  </form>
 </div>
 
 <div class="row-fluid real-data">

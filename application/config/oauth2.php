@@ -4,6 +4,7 @@ $config = array(
 	'google' => array(
         'id'     => '265230816115.apps.googleusercontent.com',
         'secret' => 'pepepepepe',
+        'server_api_key' => 'pepepep'
 		'scope'  => array(
 			'https://www.googleapis.com/auth/userinfo.email',
 			'https://www.googleapis.com/auth/userinfo.profile',

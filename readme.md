@@ -17,7 +17,7 @@ I personally could not have found a better group than you guys. Thanks.
 BandHunter was made for the music bands, the public and the media. It's a
 place where you can find every bit of information about emerging bands and
 shows near you. Being the owner of a band has never been easier with the
-tools this proyect provides. And all this could make a hell of an analytics
+tools this proyect provides. And all this could make a great analytics
 program for the media.
 
 ## Technologies

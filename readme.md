@@ -1,11 +1,11 @@
 # BandHunter
 
-## Introdution
+## Introduction
 
-This has been a proyect for the Google Developer Bus 2013 Argentina edition.
-It's been 3 days of hard work with an amaizing group of 4 people. All this
+This has been a project for the Google Developer Bus 2013 Argentina edition.
+It's been 3 days of hard work with an amazing group of 4 people. All this
 code has been programmed by the owner of the repository
-([abarabas](https://github.com/abarabas)) an the collaborator
+([abarabas](https://github.com/abarabas)) and the collaborator
 [ngleich](https://github.com/ngleich) but it couldn't have been done without
 the help of [@ricardocorbetta](https://twitter.com/ricardocorbetta) and Lucia.
 
@@ -17,7 +17,7 @@ I personally could not have found a better group than you guys. Thanks.
 BandHunter was made for the music bands, the public and the media. It's a
 place where you can find every bit of information about emerging bands and
 shows near you. Being the owner of a band has never been easier with the
-tools this proyect provides. And all this could make a great analytics
+tools this project provides. And all this could make a great analytics
 program for the media.
 
 ## Technologies

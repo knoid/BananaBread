@@ -27,3 +27,6 @@ program for the media.
   * Google Maps API for geolocalization.
   * SoundCloud API to fetch the bands' music.
   * data.buenosaires.gob.ar as a resource of local shows.
+
+Special thanks to [@matiasmolinas](https://twitter.com/matiasmolinas) for
+all the help you've given us this couple of days.

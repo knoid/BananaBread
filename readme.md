@@ -7,7 +7,8 @@ It's been 3 days of hard work with an amazing group of 4 people. All this
 code has been programmed by the owner of the repository
 ([abarabas](https://github.com/abarabas)) and the collaborator
 [ngleich](https://github.com/ngleich) but it couldn't have been done without
-the help of [@ricardocorbetta](https://twitter.com/ricardocorbetta) and Lucia.
+the help of [@ricardocorbetta](https://twitter.com/ricardocorbetta) and
+[@lucardullo](https://twitter.com/lucardullo).
 
 So thank you very much for the amazing experience we've lived in this 3 days.
 I personally could not have found a better group than you guys. Thanks.
